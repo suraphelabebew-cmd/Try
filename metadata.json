@@ -1,0 +1,6 @@
+{
+  "name": "SiteVault Universal Website Scraper & Archiver",
+  "description": "Production-ready recursive website crawler, asset mirrorer, and high-compression archiver with interactive Python script generator.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

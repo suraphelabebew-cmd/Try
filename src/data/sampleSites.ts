@@ -1,0 +1,258 @@
+import { CrawledResource, FileCategory } from '../types';
+
+export interface SitePreset {
+  id: string;
+  name: string;
+  startUrl: string;
+  description: string;
+  domain: string;
+  totalEstimatedFiles: number;
+  totalEstimatedBytes: number;
+  resources: Array<Omit<CrawledResource, 'timestamp'>>;
+}
+
+export const SAMPLE_PRESETS: SitePreset[] = [
+  {
+    id: 'spa-wasm',
+    name: 'Modern WebApp (React + WASM + Assets)',
+    startUrl: 'https://app.quantumsandbox.io',
+    domain: 'app.quantumsandbox.io',
+    description: 'Single-page web application featuring compiled WebAssembly binaries, chunked JS bundles, SVG icons, and web fonts.',
+    totalEstimatedFiles: 14,
+    totalEstimatedBytes: 4280000,
+    resources: [
+      {
+        url: 'https://app.quantumsandbox.io/',
+        localPath: 'app.quantumsandbox.io/index.html',
+        category: 'html',
+        extension: '.html',
+        sizeBytes: 14200,
+        depth: 0,
+        status: 200,
+        isHtml: true,
+        newLinksDiscovered: 8,
+      },
+      {
+        url: 'https://app.quantumsandbox.io/static/css/theme.dark.min.css',
+        localPath: 'app.quantumsandbox.io/static/css/theme.dark.min.css',
+        category: 'stylesheet',
+        extension: '.css',
+        sizeBytes: 68500,
+        depth: 1,
+        status: 200,
+        isHtml: false,
+        newLinksDiscovered: 2,
+      },
+      {
+        url: 'https://app.quantumsandbox.io/static/js/runtime.8f9b2c.js',
+        localPath: 'app.quantumsandbox.io/static/js/runtime.8f9b2c.js',
+        category: 'javascript',
+        extension: '.js',
+        sizeBytes: 42100,
+        depth: 1,
+        status: 200,
+        isHtml: false,
+        newLinksDiscovered: 0,
+      },
+      {
+        url: 'https://app.quantumsandbox.io/static/js/main.chunk.c4a11e.js',
+        localPath: 'app.quantumsandbox.io/static/js/main.chunk.c4a11e.js',
+        category: 'javascript',
+        extension: '.js',
+        sizeBytes: 642800,
+        depth: 1,
+        status: 200,
+        isHtml: false,
+        newLinksDiscovered: 3,
+      },
+      {
+        url: 'https://app.quantumsandbox.io/static/wasm/physics_engine_v3.wasm',
+        localPath: 'app.quantumsandbox.io/static/wasm/physics_engine_v3.wasm',
+        category: 'binary',
+        extension: '.wasm',
+        sizeBytes: 1890000,
+        depth: 2,
+        status: 200,
+        isHtml: false,
+        newLinksDiscovered: 0,
+      },
+      {
+        url: 'https://app.quantumsandbox.io/config/appsettings.production.json',
+        localPath: 'app.quantumsandbox.io/config/appsettings.production.json',
+        category: 'json',
+        extension: '.json',
+        sizeBytes: 5400,
+        depth: 2,
+        status: 200,
+        isHtml: false,
+        newLinksDiscovered: 0,
+      },
+      {
+        url: 'https://app.quantumsandbox.io/static/media/logo_symbol.svg',
+        localPath: 'app.quantumsandbox.io/static/media/logo_symbol.svg',
+        category: 'image',
+        extension: '.svg',
+        sizeBytes: 18600,
+        depth: 1,
+        status: 200,
+        isHtml: false,
+        newLinksDiscovered: 0,
+      },
+      {
+        url: 'https://app.quantumsandbox.io/static/fonts/inter-latin-var.woff2',
+        localPath: 'app.quantumsandbox.io/static/fonts/inter-latin-var.woff2',
+        category: 'font',
+        extension: '.woff2',
+        sizeBytes: 124000,
+        depth: 2,
+        status: 200,
+        isHtml: false,
+        newLinksDiscovered: 0,
+      },
+      {
+        url: 'https://app.quantumsandbox.io/workspace/canvas',
+        localPath: 'app.quantumsandbox.io/workspace/canvas/index.html',
+        category: 'html',
+        extension: '.html',
+        sizeBytes: 18900,
+        depth: 1,
+        status: 200,
+        isHtml: true,
+        newLinksDiscovered: 2,
+      },
+      {
+        url: 'https://app.quantumsandbox.io/workspace/export?format=json',
+        localPath: 'app.quantumsandbox.io/workspace/export__q_format_json/index.html',
+        category: 'html',
+        extension: '.html',
+        sizeBytes: 24100,
+        depth: 2,
+        status: 200,
+        isHtml: true,
+        newLinksDiscovered: 1,
+      },
+      {
+        url: 'https://app.quantumsandbox.io/favicon.ico',
+        localPath: 'app.quantumsandbox.io/favicon.ico',
+        category: 'image',
+        extension: '.ico',
+        sizeBytes: 15400,
+        depth: 1,
+        status: 200,
+        isHtml: false,
+        newLinksDiscovered: 0,
+      },
+    ],
+  },
+  {
+    id: 'docs-portal',
+    name: 'Full Technical Docs Site (Nested API & Guides)',
+    startUrl: 'https://docs.cloudcore.internal',
+    domain: 'docs.cloudcore.internal',
+    description: 'Deep hierarchical documentation with breadcrumbs, code blocks, API specifications, and interactive tables.',
+    totalEstimatedFiles: 18,
+    totalEstimatedBytes: 3120000,
+    resources: [
+      {
+        url: 'https://docs.cloudcore.internal/',
+        localPath: 'docs.cloudcore.internal/index.html',
+        category: 'html',
+        extension: '.html',
+        sizeBytes: 32400,
+        depth: 0,
+        status: 200,
+        isHtml: true,
+        newLinksDiscovered: 7,
+      },
+      {
+        url: 'https://docs.cloudcore.internal/getting-started/quickstart',
+        localPath: 'docs.cloudcore.internal/getting-started/quickstart/index.html',
+        category: 'html',
+        extension: '.html',
+        sizeBytes: 41200,
+        depth: 1,
+        status: 200,
+        isHtml: true,
+        newLinksDiscovered: 4,
+      },
+      {
+        url: 'https://docs.cloudcore.internal/api/v2/openapi.json',
+        localPath: 'docs.cloudcore.internal/api/v2/openapi.json',
+        category: 'json',
+        extension: '.json',
+        sizeBytes: 290000,
+        depth: 1,
+        status: 200,
+        isHtml: false,
+        newLinksDiscovered: 0,
+      },
+      {
+        url: 'https://docs.cloudcore.internal/assets/prism-synthwave.css',
+        localPath: 'docs.cloudcore.internal/assets/prism-synthwave.css',
+        category: 'stylesheet',
+        extension: '.css',
+        sizeBytes: 34100,
+        depth: 1,
+        status: 200,
+        isHtml: false,
+        newLinksDiscovered: 0,
+      },
+      {
+        url: 'https://docs.cloudcore.internal/assets/docs-search-index.json',
+        localPath: 'docs.cloudcore.internal/assets/docs-search-index.json',
+        category: 'json',
+        extension: '.json',
+        sizeBytes: 840000,
+        depth: 1,
+        status: 200,
+        isHtml: false,
+        newLinksDiscovered: 0,
+      },
+      {
+        url: 'https://docs.cloudcore.internal/diagrams/architecture_flow.svg',
+        localPath: 'docs.cloudcore.internal/diagrams/architecture_flow.svg',
+        category: 'image',
+        extension: '.svg',
+        sizeBytes: 78900,
+        depth: 2,
+        status: 200,
+        isHtml: false,
+        newLinksDiscovered: 0,
+      },
+      {
+        url: 'https://docs.cloudcore.internal/sdk/python/reference',
+        localPath: 'docs.cloudcore.internal/sdk/python/reference/index.html',
+        category: 'html',
+        extension: '.html',
+        sizeBytes: 68100,
+        depth: 2,
+        status: 200,
+        isHtml: true,
+        newLinksDiscovered: 2,
+      },
+      {
+        url: 'https://docs.cloudcore.internal/downloads/spec_v2.pdf',
+        localPath: 'docs.cloudcore.internal/downloads/spec_v2.pdf',
+        category: 'binary',
+        extension: '.pdf',
+        sizeBytes: 1420000,
+        depth: 2,
+        status: 200,
+        isHtml: false,
+        newLinksDiscovered: 0,
+      },
+    ],
+  },
+];
+
+export function getFileCategory(ext: string): FileCategory {
+  const e = ext.toLowerCase();
+  if (['.html', '.htm', '.xhtml', '.php', '.asp', '.jsp'].includes(e)) return 'html';
+  if (['.js', '.mjs', '.cjs', '.ts', '.tsx', '.jsx'].includes(e)) return 'javascript';
+  if (['.css', '.scss', '.sass', '.less'].includes(e)) return 'stylesheet';
+  if (['.json', '.xml', '.yaml', '.yml', '.csv'].includes(e)) return 'json';
+  if (['.png', '.jpg', '.jpeg', '.gif', '.svg', '.webp', '.ico', '.avif'].includes(e)) return 'image';
+  if (['.woff', '.woff2', '.ttf', '.otf', '.eot'].includes(e)) return 'font';
+  if (['.wasm', '.pdf', '.zip', '.tar', '.gz', '.mp4', '.webm', '.mp3'].includes(e)) return 'binary';
+  return 'other';
+}
